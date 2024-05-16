@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background-color: #c38da3;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 4rem;
+  color: #131111;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: rgba(0, 255, 132, 0.9) 0px 0px 39px;
+}
+
+nav {
+  margin-bottom: 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #131111;
+  background-color: #ba6c85;
+}
+
+nav a:hover {
+  background-color: #131111;
+  color: #fff;
+}
+
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #131111;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #605e5e;
+}
+
+main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 13rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#userContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  height: 100%;
+}
+
+#user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  width: 300px;
+}
+
+#user input {
+  text-align: center;
+  margin: 0.5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #d8b5c4;
+  width: 100%;
+}
+
+#user button {
+  margin: 0.5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #131111;
+  color: #fff;
+  text-wrap: nowrap;
+}
+
+#user button:hover {
+  background-color: #605e5e;
+}
+
+#user input::placeholder {
+  color: #3c2e35;
+  text-align: center;
+}
+
+#errorMsg {
+  color: rgb(122, 4, 101);
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+#welcomeContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+  width: 100%;
+  gap: 1rem;
+}
+
+#userWelcomeContainer {
+  width: 40%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#userWelcome {
+  font-family: monospace;
+  color: #3c2e35;
+  text-shadow: 1px 1px 1px #71a72f;
+}
+
+#intructionsContainer {
+  width: 30%;
+  border: 1px solid #131111;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.divider {
+  border-top: 3px solid #131111;
+  margin: 2rem 2rem;
+  width: 80%;
+}
+
+#chatAndGameContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  width: 100%;
+}
+
+#chatContainer {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#chatContainer h2 {
+  font-family: monospace;
+  color: #3c2e35;
+}
+
+#diceContainer {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#diceContainer h2 {
+  font-family: monospace;
+  color: #3c2e35;
+}
+
+#diceContainer img {
+  width: 100px;
+  height: auto;
+  -webkit-box-shadow: 0px 0px 105px 45px rgba(45, 255, 196, 0.9);
+  -moz-box-shadow: 0px 0px 105px 45px rgba(45, 255, 196, 0.9);
+  box-shadow: 0px 0px 105px 45px rgba(45, 255, 196, 0.9);
+}
+
+@keyframes rotateDice {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateAndMoveDice {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(50px) rotate(180deg);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
+#diceImg.rotating {
+  animation: rotateDice 0.5s linear;
+  animation: rotateAndMoveDice 0.5s linear;
+}
+
+#diceButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+#messageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#chatMessageForm input {
+  text-align: center;
+  margin: 0.5rem;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background-color: #d8b5c4;
+}
+
+#chatErrorMsg {
+  color: rgb(122, 4, 101);
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+#chat li {
+  list-style: none;
+  margin: 0.5rem;
+  font-family: monospace;
+  color: #3c2e35;
+  text-align: start;
+}
+
+#scoreContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+#scoreContainer h3 {
+  font-family: monospace;
+  color: #3c2e35;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+#score li {
+  list-style: none;
+  margin: 0.5rem;
+}
+
+#diceResult {
+  font-family: monospace;
+  color: #3c2e35;
+  margin-bottom: 1rem;
+}
+
+#winnerMsg {
+  font-family: monospace;
+  color: #61d039;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+}
+
+#highscoreContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+#highscoreContainer h2 {
+  font-family: monospace;
+  color: #3c2e35;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 1px #71a72f;
+  border-bottom: 1px solid #131111;
+}
+
+#scoreTable {
+  width: 50%;
+  border: 1px solid #131111;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#scoreTable th,
+td {
+  font-family: monospace;
+  color: #3c2e35;
+  text-align: left;
+  padding: 0 10px;
+}

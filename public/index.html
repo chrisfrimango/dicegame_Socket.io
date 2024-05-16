@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header>
+    <h1>THE DICE GAME</h1>
+  </header>
+  <div class="userinput" id="userContainer" >
+    <h3>Enter your name to start playing</h3>
+    <form id="user" >
+      <input type="text" placeholder="name" id="nameInput" />
+      <button type="submit" id="start">Start playing</button>
+    </form>
+    <div id="errorMsg"></div>
+  </div>
+  <main class="hidden" id="mainContent">
+    <nav>
+      <ul>
+        <li><a href="highscore.html" id="getHighscore">High Score</a></li>
+      </ul>
+    </nav>
+    <div id="welcomeContainer">
+      <div id="userWelcomeContainer">
+        <h2 id="userWelcome"></h2>
+      </div>
+      <div id="intructionsContainer">
+        <h1>Instructions</h1>
+        <p>
+          The game is simple, you roll the dice and try to accumulate points.
+          You can roll the dice as many times as you want.
+          The game continues with each player rolling the dice in turn until one player reaches 50 points. The first player to reach 50 points wins.
+        </p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="chatAndGameContainer">
+      <div id="chatContainer">
+        <h2>Chat whit other players</h2>
+        <div id="messageContainer">
+          <form id="chatMessageForm">
+            <input type="text" id="chatMessageInput" />
+            <button type="submit" id="sendMessageButton">Send message</button>
+          </form>
+          <div id="chatErrorMsg"></div>
+        </div>
+        <ul id="chat">
+
+        </ul>
+      </div>
+
+      <div id="diceContainer">
+        <h2>Roll the dice</h2>
+        <div id="diceButtonContainer">
+          <button id="roll">Roll</button>
+          <button id="reset">Reset</button>
+        </div>
+        <div id="diceResult"></div>
+        <div id="dice">
+          <img src="/dice1.png" alt="dice" id="diceImg" />
+        </div>
+        <div id="scoreContainer">
+          <h3>Score</h3>
+          <h1 id="winnerMsg"></h1>
+          <ul id="score">
+
+          </ul>
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      <p>© 2024 Christoffer Friman</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+  </html>

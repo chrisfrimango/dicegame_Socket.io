@@ -1,0 +1,9 @@
+
+
+
+# Mac directories
+.DS_Store
+
+
+# Node.js directories
+node_modules

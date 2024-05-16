@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DICE GAME</h1>
+    </header>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="index.html">PLAY</a></li>
+        </ul>
+      </nav>
+      <div id="highscoreContainer">
+        <h2>High Score</h2>
+        <table id="scoreTable">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Score</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Här renderas highscore-listan -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>© 2024 Christoffer Friman</p>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
